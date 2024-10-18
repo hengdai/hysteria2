@@ -10,6 +10,7 @@ import (
 )
 
 // TestServerConfig tests the parsing of the server config
+// go test -v -test.run TestServerConfig
 func TestServerConfig(t *testing.T) {
 	viper.SetConfigFile("server_test.yaml")
 	err := viper.ReadInConfig()
@@ -18,6 +19,11 @@ func TestServerConfig(t *testing.T) {
 	err = viper.Unmarshal(&config)
 	assert.NoError(t, err)
 	assert.Equal(t, config, serverConfig{
+		V2board: &v2boardConfig{
+			ApiHost: "https://air.magicoo.cc",
+			ApiKey:  "1d379cc6371c7c6bd228b4c3b1c1b084",
+			NodeID:  5,
+		},
 		Listen: ":8443",
 		Obfs: serverConfigObfs{
 			Type: "salamander",

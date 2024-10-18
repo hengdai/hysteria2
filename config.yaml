@@ -1,0 +1,20 @@
+listen: :56887
+v2board:
+  apiHost: https://air.magicoo.cc
+  apiKey: 1d379cc6371c7c6bd228b4c3b1c1b084
+  nodeID: 5
+tls:
+  type: tls
+  cert: /Users/dh/Downloads/fullchain.pem
+  key: /Users/dh/Downloads/privkey.pem
+auth:
+  type: v2board
+trafficStats:
+  listen: 127.0.0.1:7653
+acl:
+  inline:
+    - reject(10.0.0.0/8)
+    - reject(172.16.0.0/12)
+    - reject(192.168.0.0/16)
+    - reject(127.0.0.0/8)
+    - reject(fc00::/7)

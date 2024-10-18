@@ -1,3 +1,8 @@
+v2board:
+  apiHost: https://air.magicoo.cc
+  apiKey: 1d379cc6371c7c6bd228b4c3b1c1b084
+  nodeID: 5
+
 listen: :8443
 
 obfs:
